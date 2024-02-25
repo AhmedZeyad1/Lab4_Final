@@ -16,10 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import default_view, calculate_total
+from .views import default_view, calculate_total, display_tax_rate
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', default_view, name='default'),
     path('<str:number>/', calculate_total, name='calculate_total'),
+    path('taxrate/', display_tax_rate, name='display_tax_rate'),
 ]
